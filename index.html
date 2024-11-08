@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora IMC</title>
+</head>
+<body id="body1">
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="#home">Ínicio</a> </li>
+                <li> <a href="#about"> Sobre</a></li>
+                <li> <a href="#calculad">Cálculo IMC</a></li>
+              
+            </ul>
+        </nav>
+   
+</header>
+<!-- ínicio -->
+<section id="home">
+<h1>
+    Índice de Massa Corporal
+   </h1>
+   <p> 
+     <b>Descubra agora o seu IMC!</b>
+   </p>
+</section>
+
+<hr>
+<!--  Sobre -->
+<section id="about">
+    <h2>
+        Cálculo IMC
+    </h2>
+
+    <p>
+        O IMC é a sigla para índice de massa corporal, um parâmetro que foi adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
+    </p>
+<br>
+    <p>
+        O índice é calculado da seguinte forma: peso dividido pela a altura ao quadrado ( p : a²). Diz-se que o individuo tem o pesso "normal" quando o resultado do IMC está entre 18,5 e 24,9.
+    </p>
+
+</section>
+<hr>
+<!-- Cálculo IMC -->
+   <section id="calculad">
+  <div class="sla1">
+    <label for="altura"> Altura; </label>
+    <input type="number" name="altura" id="altura">
+<pre>
+
+
+</pre>
+    <label for="peso"> Peso (kg); </label>
+    <input type="number" name="peso" id="peso">
+</div>
+    <button class="calculate" onclick="calcImc()">
+        Calcular IMC
+    </button>
+
+
+    <p> Seu índice de massa corporal é: <span id="resultado"></span></p>
+
+    <script>
+        function calcImc(){
+            const altura = parseFloat (document.getElementById("altura").value);
+            const peso = parseFloat (document.getElementById("peso").value);
+            
+            const resultado = peso / (altura**2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2);
+        }
+
+    </script>
+
+   </section>
+
+
+   <section class="sla2">
+
+    <button class="mudacor" onclick="mudarCor()">
+        Clique Aqui 
+    </button>
+
+             <script>
+            function mudarCor(){
+                const body1 = document.getElementById("body1");
+                body1.style.backgroundColor = body1.style.backgroundColor === "#abc6e4"?  "#ffffff" : "#abc6e4";
+            }
+
+        </script> 
+
+   
+
+   </section> 
+
+<footer>
+    <p>
+        &copy; Todos os direitos reservados
+    </p>
+</footer>
+    
+</body>
+</html>
